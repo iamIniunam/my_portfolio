@@ -2775,6 +2775,23 @@ img.u-pull-left {
     text-transform: uppercase;
 }
 
+.mobile-static {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-typing {
+        display: none;
+    }
+
+    .mobile-static {
+        display: inline;
+    }
+
+    .typed-cursor {
+        display: none !important;
+    }
+}
 
 /* ------------------------------------------------------------------- 
  * ## MailtoUI style overrides
@@ -3686,10 +3703,8 @@ img.u-pull-left {
  *
  *
  * ------------------------------------------------------------------- */
-
 .project-section {
     margin-top: 12rem;
-    /* Move spacing here */
 }
 
 .project-section:first-of-type {
@@ -3701,11 +3716,8 @@ img.u-pull-left {
     align-items: center;
     justify-content: space-between;
     gap: 14rem;
-    /* Remove margin-top from here */
 }
 
-
-/* flip every second project */
 .project-section:nth-of-type(even) .project-content {
     flex-direction: row-reverse;
 }
@@ -3713,9 +3725,7 @@ img.u-pull-left {
 .project-content .text-content {
     max-width: 750px;
     text-align: left;
-    /* keeps text readable and balanced */
 }
-
 
 .project-content ul {
     list-style: none;
@@ -3725,53 +3735,78 @@ img.u-pull-left {
 
 .project-content ul li {
     position: relative;
-    margin-left: 1.5rem;
     padding-left: 1.5rem;
-    /* color: var(--color-white); */
+    margin-bottom: 0.5rem;
 }
 
 /* Custom bullet color */
 .project-content ul li::before {
     content: "•";
     position: absolute;
-    left: -1rem;
+    left: 0;
     top: 0;
     color: var(--color-1);
     font-weight: bold;
 }
-
 
 .mockup-images {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 10rem;
-    /* space between the two images */
 }
 
 .mockup-images img {
     width: 250px;
-    /* adjust to your liking */
     height: auto;
     object-fit: contain;
 }
 
 /* responsive */
 @media (max-width: 900px) {
+    .project-section {
+        margin-top: 6rem;
+    }
+
     .project-content {
         flex-direction: column !important;
-        text-align: center;
+        gap: 3rem;
+        align-items: flex-start;
     }
 
     .project-content .text-content {
-        text-align: center !important;
+        text-align: left !important;
+        max-width: 100%;
+    }
+
+    /* No grid - keep list vertical */
+    .project-content ul {
+        text-align: left;
+        width: 100%;
+        margin: 1.5rem 0;
+    }
+
+    .project-content ul li {
+        margin-bottom: 0.5rem;
+        margin-left: 0;
+    }
+
+    .mockup-images {
+        margin-top: 2rem;
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Show both mockups */
+    .mockup-images .mockup-right {
+        display: block;
+    }
+
+    .mockup-images img {
+        width: 150px;
     }
 }
-
-
-
-
 
 /* ===================================================================
  * # WORKS
