@@ -3681,100 +3681,94 @@ img.u-pull-left {
     }
 }
 
+/* ===================================================================
+ * # PROJECTS
+ *
+ *
+ * ------------------------------------------------------------------- */
+
 .project-section {
-    color: var(--color-white);
-    padding: 50px 0;
-    display: flex;
+    margin-top: 12rem;
+    /* Move spacing here */
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
+.project-section:first-of-type {
+    margin-top: 0;
 }
 
 .project-content {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 14rem;
+    /* Remove margin-top from here */
 }
 
-.text-content {
-    flex: 1 1 45%;
-    margin-right: 40px;
+
+/* flip every second project */
+.project-section:nth-of-type(even) .project-content {
+    flex-direction: row-reverse;
 }
 
-.text-content h2 {
-    font-family: var(--font-1);
-    font-size: 4.5rem;
-    color: var(--color-white);
-    margin-top: 0rem;
-    margin-bottom: 2rem;
+.project-content .text-content {
+    max-width: 750px;
+    text-align: left;
+    /* keeps text readable and balanced */
 }
 
-.text-content p {
-    font-size: 1.6rem;
-    line-height: 1.8;
-    margin-bottom: 1.7rem;
-    color: #ccc;
+
+.project-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
 }
 
-.features {
-    list-style: disc;
+.project-content ul li {
+    position: relative;
     margin-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-white);
+    padding-left: 1.5rem;
+    /* color: var(--color-white); */
 }
 
-.features li {
-    margin-bottom: 0.4rem;
+/* Custom bullet color */
+.project-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    color: var(--color-1);
+    font-weight: bold;
 }
 
-.platform-icons img {
-    height: 30px;
-    margin-right: 15px;
-    opacity: 0.9;
-}
 
 .mockup-images {
-    flex: 1 1 50%;
     display: flex;
     justify-content: center;
-    position: relative;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10rem;
+    /* space between the two images */
 }
 
-.mockup-left,
-.mockup-right {
+.mockup-images img {
     width: 250px;
-    border-radius: 25px;
+    /* adjust to your liking */
+    height: auto;
+    object-fit: contain;
 }
 
-.mockup-left {
-    transform: translateX(40px);
-    z-index: 1;
-}
-
-.mockup-right {
-    transform: translateX(45px);
-}
-
+/* responsive */
 @media (max-width: 900px) {
     .project-content {
-        flex-direction: column;
+        flex-direction: column !important;
         text-align: center;
     }
 
-    .text-content {
-        margin-right: 0;
-        margin-bottom: 40px;
-    }
-
-    .mockup-left,
-    .mockup-right {
-        width: 200px;
-        transform: none;
+    .project-content .text-content {
+        text-align: center !important;
     }
 }
+
 
 
 
