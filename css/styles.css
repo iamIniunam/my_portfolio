@@ -3762,6 +3762,33 @@ img.u-pull-left {
     object-fit: contain;
 }
 
+.platform-icons {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.platform-icons img {
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.platform-icons img:hover {
+    transform: scale(1.2);
+}
+
+.icon-android {
+    width: 50px;
+}
+
+.icon-apple {
+    width: 33px;
+}
+
+
+
 /* responsive */
 @media (max-width: 900px) {
     .project-section {
