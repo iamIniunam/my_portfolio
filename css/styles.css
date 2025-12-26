@@ -3825,11 +3825,6 @@ img.u-pull-left {
         gap: 1rem;
     }
 
-    /* Show both mockups */
-    .mockup-images .mockup-right {
-        display: block;
-    }
-
     .mockup-images img {
         width: 150px;
     }
